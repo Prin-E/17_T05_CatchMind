@@ -1,0 +1,77 @@
+﻿<Window x:Class="T05.CatchMind.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:T05.CatchMind.Client"
+        mc:Ignorable="d"
+        Title="Client" Height="640" Width="1024" ResizeMode="CanMinimize" Closed="OnWindowClosed">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF7C95D5" Offset="0"/>
+                <GradientStop Color="#FFB8C9F6" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border BorderBrush="#FF073169" BorderThickness="2" Width="600" Height="400" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0">
+            <Canvas x:Name="MyCanvas" Background="White" MouseDown="Canvas_MouseDown" MouseMove="Canvas_MouseMove" MouseUp="Canvas_MouseUp" />
+        </Border>
+        <TextBox x:Name="MessageText" HorizontalAlignment="Left" Height="23" Margin="209,487,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="520" KeyDown="MessageText_KeyDown"/>
+        <Button x:Name="MessageButton" Content="전송" HorizontalAlignment="Left" Margin="734,487,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="MessageButton_Click"/>
+        <Grid HorizontalAlignment="Left" Height="35" Margin="209,445,0,0" VerticalAlignment="Top" Width="280">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Color1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Background="Black" BorderBrush="Black" Height="31" Click="Color1_Click"/>
+            <Button x:Name="Color2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Background="Red" BorderBrush="Black" Height="31" Grid.Column="1" Click="Color2_Click"/>
+            <Button x:Name="Color3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Background="Yellow" BorderBrush="Black" Height="31" Grid.Column="2" Click="Color3_Click"/>
+            <Button x:Name="Color4" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Background="Lime" BorderBrush="Black" Height="31" Grid.Column="3" Click="Color4_Click"/>
+            <Button x:Name="Color5" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Background="Blue" BorderBrush="Black" Height="31" Grid.Column="4" Click="Color5_Click"/>
+            <Button x:Name="Color6" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Background="White" BorderBrush="Black" Height="31" Grid.Column="5" Click="Color6_Click"/>
+            <Button x:Name="Clear" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Background="Gray" BorderBrush="Black" Height="31" Grid.Column="6" Click="Clear_Click" FontWeight="Bold" FontSize="20" VerticalContentAlignment="Center" Foreground="#FFFFCBCB"/>
+        </Grid>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="10" Margin="525,460,0,0" Stroke="Black" VerticalAlignment="Top" Width="10"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="20" Margin="740,455,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Slider x:Name="ThicknessSlider" HorizontalAlignment="Left" Margin="540,456,0,0" VerticalAlignment="Top" Width="189" Minimum="1" ValueChanged="ThicknessSlider_ValueChanged"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="10,40,0,0" VerticalAlignment="Top" Width="194"/>
+        <Grid HorizontalAlignment="Left" Height="50" Margin="10,40,0,0" VerticalAlignment="Top" Width="194" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label x:Name="User1ID" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="User1Message" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="50" Margin="10,95,0,0" VerticalAlignment="Top" Width="194" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label x:Name="User2ID" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="User2Message" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="50" Margin="814,40,0,0" VerticalAlignment="Top" Width="194" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label x:Name="User3ID" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="User3Message" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="50" Margin="814,95,0,0" VerticalAlignment="Top" Width="194" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label x:Name="User4ID" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="User4Message" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1"/>
+        </Grid>
+        <TextBox x:Name="WordText" HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" TextWrapping="Wrap" Text="게임 시작 전입니다." VerticalAlignment="Top" Width="194" Focusable="False"/>
+    </Grid>
+</Window>
